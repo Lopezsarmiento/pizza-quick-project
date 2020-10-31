@@ -1,0 +1,30 @@
+
+GET http://localhost:4000/ping
+
+###
+
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "firstname": "David",
+  "email": "vicholopez@email.com",
+  "address":"cervantes 55 depto 1"
+}
+
+###
+GET http://localhost:4000/users?email=vicholopez@email.com
+
+###
+
+PUT http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "firstname": "sumercisco",
+  "email": "diegolopez@email.com"
+}
+
+###
+
+DELETE http://localhost:4000/users?email=vicholopez@email.com
