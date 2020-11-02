@@ -14,6 +14,18 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+  "firstname": "mar",
+  "email": "mar@email.com",
+  "password": "123456",
+  "address":"cervantes 55 depto 1"
+}
+
+###
 GET http://localhost:4000/users?email=vicho@email.com
 token: 4cqlkzp6kzsshq39kqnd
 
@@ -27,6 +39,16 @@ token: xk85rfqxprgx4b2pnwnm
   "firstname": "sumercisco",
   "email": "diego@email.com"
 }
+###
+
+PUT http://localhost:4000/edit
+Content-Type: application/json
+token: 7t2gptlkbd5k9rzehm26
+
+{
+  "firstname": "marchelita",
+  "email": "mar@email.com"
+}
 
 ###
 
@@ -39,7 +61,7 @@ POST http://localhost:4000/tokens
 Content-Type: application/json
 
 {
-  "email":"diego@email.com",
+  "email":"mar@email.com",
   "password":"123456"
 }
 
@@ -60,3 +82,35 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:4000/tokens?id=xk85rfqxprgx4b2pnwnm
+
+
+###
+GET http://localhost:4000/menu?email=vicho@email.com
+token: 4cqlkzp6kzsshq39kqnd
+
+###
+
+POST http://localhost:4000/orders
+Content-Type: application/json
+token: zkhxmmq3pnt3vdhi4zdg
+
+{
+  "email":"mar@email.com",
+  "cart": [
+    {
+      "id":"napo",
+      "name":"Napolitan",
+      "quantity":2
+    },
+    {
+      "id":"hawa",
+      "name":"Hawaiian",
+      "quantity":1
+    },
+    {
+      "id":"pepp",
+      "name":"Pepperoni",
+      "quantity":1
+    }
+  ]
+}
