@@ -7,24 +7,56 @@ POST http://localhost:4000/users
 Content-Type: application/json
 
 {
-  "firstname": "David",
-  "email": "vicholopez@email.com",
+  "firstname": "diego",
+  "email": "diego@email.com",
+  "password": "123456",
   "address":"cervantes 55 depto 1"
 }
 
 ###
-GET http://localhost:4000/users?email=vicholopez@email.com
+GET http://localhost:4000/users?email=vicho@email.com
+token: 4cqlkzp6kzsshq39kqnd
 
 ###
 
 PUT http://localhost:4000/users
 Content-Type: application/json
+token: xk85rfqxprgx4b2pnwnm
 
 {
   "firstname": "sumercisco",
-  "email": "diegolopez@email.com"
+  "email": "diego@email.com"
 }
 
 ###
 
-DELETE http://localhost:4000/users?email=vicholopez@email.com
+DELETE http://localhost:4000/users?email=diego@email.com
+token: xk85rfqxprgx4b2pnwnm
+
+###
+// Tokens
+POST http://localhost:4000/tokens
+Content-Type: application/json
+
+{
+  "email":"diego@email.com",
+  "password":"123456"
+}
+
+###
+
+GET http://localhost:4000/tokens?tokenId=auzxzw6jy832tdxmrjxb
+
+###
+
+PUT  http://localhost:4000/tokens
+Content-Type: application/json
+
+{
+  "id":"x8w24bpoqapg41d0ozgk",
+  "extend":true
+}
+
+###
+
+DELETE http://localhost:4000/tokens?id=xk85rfqxprgx4b2pnwnm
