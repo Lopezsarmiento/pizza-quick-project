@@ -114,3 +114,39 @@ token: zkhxmmq3pnt3vdhi4zdg
     }
   ]
 }
+
+
+###
+
+GET http://localhost:4000/orders?id=a7wczsnwhcyt4zg8r0qx
+token: zkhxmmq3pnt3vdhi4zdg
+
+###
+
+PUT  http://localhost:4000/orders
+Content-Type: application/json
+token: zkhxmmq3pnt3vdhi4zdg
+
+{
+  "id":"a7wczsnwhcyt4zg8r0qx",
+  "cart": [
+    { "id": "napo", "name": "Napolitan", "quantity": 2 }
+  ]
+}
+
+
+###
+
+DELETE http://localhost:4000/orders?id=yth0h14url4ukmiuyhwr
+token: 01y28tw56feg5ee42dqe
+
+###
+// stripe
+POST https://api.stripe.com/v1/payment_intents
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer sk_test_51HjPCCIwA6VFOF0X2ad8slejnVwFLskBMPOaMvdVUzH22kMaYXOo07iI0pWVVcVvDmQLJoWGqO70EySqoFoI3nam00LUDh4FPW
+
+amount=2000
+&currency=usd
+&confirm=true
+&payment_method=pm_card_visa
