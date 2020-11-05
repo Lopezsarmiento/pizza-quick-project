@@ -85,6 +85,7 @@ DELETE http://localhost:4000/tokens?id=xk85rfqxprgx4b2pnwnm
 
 
 ###
+// MENU
 GET http://localhost:4000/menu?email=vicho@email.com
 token: 4cqlkzp6kzsshq39kqnd
 
@@ -98,18 +99,8 @@ token: zkhxmmq3pnt3vdhi4zdg
   "email":"mar@email.com",
   "cart": [
     {
-      "id":"napo",
-      "name":"Napolitan",
-      "quantity":2
-    },
-    {
       "id":"hawa",
       "name":"Hawaiian",
-      "quantity":1
-    },
-    {
-      "id":"pepp",
-      "name":"Pepperoni",
       "quantity":1
     }
   ]
@@ -128,9 +119,14 @@ Content-Type: application/json
 token: zkhxmmq3pnt3vdhi4zdg
 
 {
-  "id":"a7wczsnwhcyt4zg8r0qx",
+  "id":"4j3dsy18a7nw8272goal",
   "cart": [
-    { "id": "napo", "name": "Napolitan", "quantity": 2 }
+    { "id": "napo", "name": "Napolitan", "quantity": 2 },
+    {
+      "id":"hawa",
+      "name":"Hawaiian",
+      "quantity":1
+    }
   ]
 }
 
@@ -141,12 +137,25 @@ DELETE http://localhost:4000/orders?id=yth0h14url4ukmiuyhwr
 token: 01y28tw56feg5ee42dqe
 
 ###
+// Payments
+
+POST http://localhost:4000/pay
+Content-Type: application/json
+token: ze02odx37wwm186rqkfa
+
+{
+  "id":"8s9456xwsxlpu6xylj8e",
+  "paymentOption":"pm_card_visa"
+}
+
+###
+
 // stripe
 POST https://api.stripe.com/v1/payment_intents
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer sk_test_51HjPCCIwA6VFOF0X2ad8slejnVwFLskBMPOaMvdVUzH22kMaYXOo07iI0pWVVcVvDmQLJoWGqO70EySqoFoI3nam00LUDh4FPW
 
-amount=2000
+amount=1000
 &currency=usd
 &confirm=true
 &payment_method=pm_card_visa
