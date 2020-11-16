@@ -155,7 +155,7 @@ POST https://api.stripe.com/v1/payment_intents
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer sk_test_51HjPCCIwA6VFOF0X2ad8slejnVwFLskBMPOaMvdVUzH22kMaYXOo07iI0pWVVcVvDmQLJoWGqO70EySqoFoI3nam00LUDh4FPW
 
-amount=1000
+amount=9500
 &currency=usd
 &confirm=true
 &payment_method=pm_card_visa
